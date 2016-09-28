@@ -1,0 +1,8 @@
+After running the simulations, the results show that having multiple servers decrease the latency (time before a request is processed).
+This is because for cases like the given input:
+
+7, /images/test.gif, 1
+7, /images/header.jpg, 1
+
+In a single server, the request to header.jpg must wait for test.gif request to finish even though they arrived at the same time (7th second).
+For multiple servers, this problem is reduced by evenly distributing request over the available servers via round-robin
